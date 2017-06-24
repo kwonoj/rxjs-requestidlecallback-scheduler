@@ -22,14 +22,10 @@ module.exports = function (config) {
 
     preprocessors: {
       'spec/**/*.ts': ['webpack'],
-      'src/**/*.ts': ['webpack', 'coverage'],
+      'src/**/*.ts': ['webpack']
     },
 
-    reporters: ['progress', 'coverage'],
-
-    coverageReporter: {
-      reporters: [{ type: 'lcov' }]
-    },
+    reporters: ['progress'],
 
     port: 9876,
     colors: true,

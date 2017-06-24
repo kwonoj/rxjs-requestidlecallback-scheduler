@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/kwonoj/rxjs-requestidlecallback-scheduler.svg?branch=master)](https://travis-ci.org/kwonoj/rxjs-requestidlecallback-scheduler)
 [![npm](https://img.shields.io/npm/v/rxjs-requestidlecallback-scheduler.svg)](https://www.npmjs.com/package/rxjs-requestidlecallback-scheduler)
 
 # rxjs-requestidlecallback-scheduler
