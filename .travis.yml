@@ -11,7 +11,4 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - npm run build && npm test
-
-after_script:
-  - bash <(curl -s codecov.io/bash)
+  - npm run build && npm test && bash <(curl -s https://codecov.io/bash)
