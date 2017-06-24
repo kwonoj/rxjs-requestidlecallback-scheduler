@@ -22,15 +22,19 @@ module.exports = function (config) {
 
     preprocessors: {
       'spec/**/*.ts': ['webpack'],
-      'src/**/*.ts': ['webpack'],
+      'src/**/*.ts': ['webpack', 'coverage'],
     },
 
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
+
+    coverageReporter: {
+      reporters: [{ type: 'lcov' }]
+    },
 
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    browsers: ['ChromeHeadless'],
+    browsers: ['Firefox'],
     singleRun: true,
   });
 };

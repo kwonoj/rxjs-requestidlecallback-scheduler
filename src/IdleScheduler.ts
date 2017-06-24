@@ -13,7 +13,7 @@ export class IdleScheduler extends AsyncScheduler {
 
     if (action) {
       do {
-        if (error = action.execute(action.state, action.delay)) {
+        if ((error = action.execute(action.state, action.delay))) {
           break;
         }
       } while (++index < count && (action = actions.shift()));
