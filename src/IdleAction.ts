@@ -2,12 +2,18 @@ import { AsyncAction } from 'rxjs/scheduler/AsyncAction';
 import { idleCallback } from './IdleCallback';
 import { IdleScheduler } from './IdleScheduler';
 export class IdleAction<T> extends AsyncAction<T> {
-  constructor(protected scheduler: IdleScheduler,
-              protected work: (this: IdleAction<T>, state?: T) => void) {
+  constructor(
+    protected scheduler: IdleScheduler,
+    protected work: (this: IdleAction<T>, state?: T) => void
+  ) {
     super(scheduler, work);
   }
 
-  protected requestAsyncId(scheduler: IdleScheduler, id?: any, delay: number = 0): any {
+  protected requestAsyncId(
+    scheduler: IdleScheduler,
+    id?: any,
+    delay: number = 0
+  ): any {
     // If delay is greater than 0, request as an async action.
     if (delay !== null && delay > 0) {
       return super.requestAsyncId(scheduler, id, delay);
@@ -17,10 +23,18 @@ export class IdleAction<T> extends AsyncAction<T> {
     // If a microtask has already been scheduled, don't schedule another
     // one. If a microtask hasn't been scheduled yet, schedule one now. Return
     // the current scheduled microtask id.
-    return scheduler.scheduled ||
-      (scheduler.scheduled = idleCallback.requestIdle(scheduler.flush.bind(scheduler, null)));
+    return (
+      scheduler.scheduled ||
+      (scheduler.scheduled = idleCallback.requestIdle(
+        scheduler.flush.bind(scheduler, null)
+      ))
+    );
   }
-  protected recycleAsyncId(scheduler: IdleScheduler, id?: any, delay: number = 0): any {
+  protected recycleAsyncId(
+    scheduler: IdleScheduler,
+    id?: any,
+    delay: number = 0
+  ): any {
     // If delay exists and is greater than 0, or if the delay is null (the
     // action wasn't rescheduled) but was originally scheduled as an async
     // action, then recycle as an async action.
