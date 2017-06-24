@@ -1,7 +1,7 @@
 {
   "name": "rxjs-requestidlecallback-scheduler",
   "version": "0.0.1",
-  "description": "",
+  "description": "RxJS 5 scheduler using requestIdleCallback",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
   "config": {
@@ -26,8 +26,8 @@
   },
   "lint-staged": {
     "*.@(ts)": [
-      "prettier --write",
-      "tslint --fix",
+      "prettier --write --single-quote",
+      "tslint --fix --type-check --project tsconfig.json",
       "git add"
     ]
   },
@@ -35,7 +35,7 @@
     "prepublish": "npm run build",
     "precommit": "lint-staged",
     "commitmsg": "validate-commit-msg",
-    "lint": "tslint src/**/*.ts spec/**/*.ts",
+    "lint": "tslint src/**/*.ts spec/**/*.ts --type-check --project tsconfig.json",
     "lint:staged": "lint-staged",
     "test": "karma start",
     "build": "npm-run-all build:clean && tsc",
