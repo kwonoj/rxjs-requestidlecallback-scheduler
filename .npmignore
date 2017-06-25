@@ -15,4 +15,4 @@ coverage
 spec
 .git
 .vscode
-dist/spec
+/src
