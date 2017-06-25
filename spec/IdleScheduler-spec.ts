@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { idle } from '../index';
+import { idle } from '../src/index';
 
 describe('Scheduler.Idle', () => {
   it('should exist', () => {
