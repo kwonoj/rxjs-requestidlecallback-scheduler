@@ -1,5 +1,6 @@
-import { AsyncScheduler } from 'rxjs/scheduler/AsyncScheduler';
 import { AsyncAction } from 'rxjs/scheduler/AsyncAction';
+import { AsyncScheduler } from 'rxjs/scheduler/AsyncScheduler';
+
 export class IdleScheduler extends AsyncScheduler {
   public flush(action?: AsyncAction<any>): void {
     this.active = true;

@@ -1,6 +1,7 @@
 import { AsyncAction } from 'rxjs/scheduler/AsyncAction';
 import { idleCallback } from './IdleCallback';
 import { IdleScheduler } from './IdleScheduler';
+
 export class IdleAction<T> extends AsyncAction<T> {
   constructor(
     protected scheduler: IdleScheduler,
